@@ -1,8 +1,10 @@
 from django.http import HttpResponse
 
+from django.shortcuts import render
+
 
 def index(request):
-    return HttpResponse('Главная страница')
+    return render(request, 'posts/index.html')
 
 
 def groups(request):
