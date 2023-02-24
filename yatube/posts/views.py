@@ -4,14 +4,15 @@ from django.shortcuts import render
 
 
 def index(request):
-    return render(request, 'posts/index.html')
+    title = 'Это главная страница проекта Yatube'
+    context = {'title': title}
+    return render(request, 'posts/index.html', context)
 
 
 def groups(request):
-    return HttpResponse(
-        '<h1> Список групп </h1> <h3> <ol>'
-        '<li>Чемодан; </li> <li> Ручка: </li> </ol> </h3>'
-    )
+    title = 'Здесь будет информация о группах проекта Yatube'
+    context = {'title': title}
+    return render(request, 'posts/group_list.html', context)
 
 
 # В урл мы ждем парметр, и нужно его прередать в функцию для использования
